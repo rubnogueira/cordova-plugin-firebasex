@@ -3,6 +3,7 @@ var path = require("path");
 var utilities = require("../lib/utilities");
 var xcode = require("xcode");
 var plist = require('plist');
+var semver = require('semver');
 
 /**
  * This is used as the display text for the build phase block in XCode as well as the
