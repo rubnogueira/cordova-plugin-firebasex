@@ -62,10 +62,9 @@ module.exports = {
      * Used to get the path to the XCode project's .pbxproj file.
      */
     getXcodeProjectPath: function () {
-        var appName = utilities.getAppName();
         const cordovaIos = require('cordova-ios');
         const version = cordovaIos.version();
-        const appName = semver.gte(version, "8.0.0-0") ? "App" : appName;
+        const appName = semver.gte(version, "8.0.0-0") ? "App" : utilities.getAppName();
         return path.join("platforms", "ios", appName + ".xcodeproj", "project.pbxproj");
     },
 
