@@ -63,6 +63,9 @@ module.exports = {
      */
     getXcodeProjectPath: function () {
         var appName = utilities.getAppName();
+        const cordovaIos = require('cordova-ios');
+        const version = cordovaIos.version();
+        const appName = semver.gte(version, "8.0.0-0") ? "App" : appName;
         return path.join("platforms", "ios", appName + ".xcodeproj", "project.pbxproj");
     },
 
